@@ -3,6 +3,7 @@
 ############################################################################
 
 library(HelpersMG)
+library(googlesheets4)
 
 URL_ati<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/19383ca2-b01a-487d-88f7-e1ffbc7d39c2/download/ati.csv"
 URL_ati_nil<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/5a1386a5-ba69-4725-8338-2f26004d7382/download/ati-nil.csv"
@@ -24,14 +25,12 @@ URL_qp<-"https://open.canada.ca/data/dataset/ecd1a913-47da-47fc-8f96-2432be42098
 URL_wrongdoing<-"https://open.canada.ca/data/dataset/6e75f19c-d19d-48aa-984e-609c8d9bc403/resource/84a77a58-6bce-4bfb-ad67-bbe452523b14/download/wrongdoing.csv"
 
 URLS1<-c(URL_ati,URL_ati_nil,URL_contracts,URL_contracts_nil,
-       URL_contracts_agg,URL_grants,URL_grants_nil,URL_reclass,
+       URL_contracts_agg,URL_reclass,
        URL_reclass_nil,URL_travela,URL_travelq,URL_travel_nil,
-       URL_hosp,URL_hosp_nil,URL_dac,URL_qp,URL_wrongdoing)
-URLS2<-c(URL_grants,URL_grants_nil,URL_reclass,
-              URL_reclass_nil,URL_travela,URL_travelq,URL_travel_nil,
-              URL_hosp,URL_hosp_nil,URL_dac,URL_bn,URL_qp)
+       URL_hosp,URL_hosp_nil,URL_wrongdoing)
+URLS2<-c(URL_grants,URL_grants_nil,URL_dac,URL_bn,URL_qp)
 
-wget(URL1,quote="")
+wget(URLS1,quote="")
 wget(URLS2,quote="")
 
 
@@ -57,6 +56,7 @@ wrongdoing<-read.csv("wrongdoing.csv")
 
 report<-data.frame("")
 
+report$date<-date()
 report$ati<-nrow(ati)
 report$ati_nil<-nrow(ati_nil)
 report$contracts<-nrow(contracts)
@@ -76,6 +76,10 @@ report$qpnotes<-nrow(qpnotes)
 report$bn<-nrow(bn)
 report$wrongdoing<-nrow(wrongdoing)
 report$X..<-NULL
-report$sum<-sum(report[1:18])
+report$sum<-sum(report[2:19])
 
 print(report$sum)
+
+sheet_append("https://docs.google.com/spreadsheets/d/18On-sYf9mj-NhYUvUJB6UFrWpPKE70QsRSUik_qj30Y", report, sheet = 1)
+
+
