@@ -8,19 +8,10 @@ on:
   schedule:
     - cron: "*/5 * * * *"
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
-    strategy: 
-      R: '4.0.2'
-    name: R sample
 steps:
 - uses: actions/setup-r@v1
   with:
-    r-version: '4.0.2' # The R version to download (if necessary) and use.
+    r-version: '3.5.3' # The R version to download (if necessary) and use.
 - run: Rscript -e 'print("hello")'
 
 
