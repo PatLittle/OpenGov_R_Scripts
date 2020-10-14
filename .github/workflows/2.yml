@@ -1,20 +1,6 @@
-# This is a basic workflow to help you get started with Actions
-
-name: testing
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  schedule:
-    - cron: "*/5 * * * *"
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: setup R
-        uses: actions/setup-r@v1
-        with:
-          r-version: '4.0.2' # The R version to download (if necessary) and use.
-      - name: do stuff
-        run: Rscript -e 'print("hello")'
-      
+steps:
+- uses: actions/checkout@master
+- uses: actions/setup-r@v1
+  with:
+    r-version: '3.5.3' # The R version to download (if necessary) and use.
+- run: Rscript -e 'print("hello")'
