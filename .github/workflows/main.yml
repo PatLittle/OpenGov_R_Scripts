@@ -7,11 +7,16 @@ name: Collect_PD_Stats
 on:
   schedule:
     - cron: "*/5 * * * *"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: setup R
+      uses: actions/setup-r@v1
+      with:
+        r-version: '3.5.3' # The R version to download (if necessary) and use.
+    - name: do stuff
+      run: Rscript -e 'print("hello")'
 
-steps:
-- uses: actions/setup-r@v1
-  with:
-    r-version: '3.5.3' # The R version to download (if necessary) and use.
-- run: Rscript -e 'print("hello")'
 
 
