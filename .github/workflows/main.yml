@@ -18,9 +18,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout 
+        uses: actions/checkout@v2
       - name: setup R
-        uses: r-lib/actions/setup-R@v1
+        uses: r-lib/actions/setup-R@master
         with:
           r-version: '3.5.3' # The R version to download (if necessary) and use.
       - name: do stuff
