@@ -1,6 +1,8 @@
 ############################################################################
 #simple way to calculate number of PD records on the Open Government Portal#
 ############################################################################
+install.packages("HelpersMG","googlesheets4")
+
 
 library(HelpersMG)
 library(googlesheets4)
@@ -80,6 +82,6 @@ report$sum<-sum(report[2:19])
 
 print(report$sum)
 
-sheet_append("https://docs.google.com/spreadsheets/d/18On-sYf9mj-NhYUvUJB6UFrWpPKE70QsRSUik_qj30Y", report, sheet = 1)
+#sheet_append("https://docs.google.com/spreadsheets/d/18On-sYf9mj-NhYUvUJB6UFrWpPKE70QsRSUik_qj30Y", report, sheet = 1)
 
 
