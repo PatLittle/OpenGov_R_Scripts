@@ -1,28 +1,8 @@
-# This is a basic workflow to help you get started with Actions
-
-name: Collect_PD_Stats
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: 
-      - master 
-
-
-
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-
+on: push
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout 
-        uses: actions/checkout@v2
-      - name: setup R
-        uses: r-lib/actions/setup-R@master
-        with:
-          r-version: '3.5.3' # The R version to download (if necessary) and use.
-      - name: do stuff
-        run: Rscript -e 'print("hello")'
+      - uses: actions/checkout@v2
+      - run: |
+          date > generated.txt
