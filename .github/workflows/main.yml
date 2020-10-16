@@ -8,4 +8,4 @@ jobs:
         with:
           r-version: '4.0.2'
       - run: |
-          RScript PD-Count.r
+          Rscript PD-Count.r
