@@ -1,7 +1,7 @@
 on:
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '10,20,30,40,50,0 * * * *'
+    - cron:  '15,25,35,45,55,5 * * * *'
 jobs:
   build:
     runs-on: ubuntu-latest
