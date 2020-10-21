@@ -1,7 +1,7 @@
 ############################################################################
 #simple way to calculate number of PD records on the Open Government Portal#
 ############################################################################
-#install.packages("HelpersMG")
+install.packages("HelpersMG")
 
 
 library(HelpersMG)
