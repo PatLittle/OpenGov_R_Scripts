@@ -1,7 +1,7 @@
 ############################################################################
 #simple way to calculate number of PD records on the Open Government Portal#
 ############################################################################
-install.packages("HelpersMG")
+#install.packages("HelpersMG")
 
 
 library(HelpersMG)
@@ -82,6 +82,6 @@ report$sum<-sum(report[2:19])
 
 print(report$sum)
 
-#sheet_append("https://docs.google.com/spreadsheets/d/18On-sYf9mj-NhYUvUJB6UFrWpPKE70QsRSUik_qj30Y", report, sheet = 1)
+write.table(report, file="PD-Count.csv",sep=',', append=T, row.names=F, col.names=F)
 
 
