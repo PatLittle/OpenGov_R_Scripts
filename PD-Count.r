@@ -81,7 +81,9 @@ report$X..<-NULL
 report$sum<-sum(report[2:19])
 
 print(report$sum)
+print(head(report))
 
+setwd("/home/runner/work/OpenGov_R_Scripts/OpenGov_R_Scripts")
 write.table(report, file="PD-Count.csv",sep=',', append=T, row.names=F, col.names=F)
 
 
