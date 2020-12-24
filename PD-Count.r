@@ -28,13 +28,13 @@ URL_wrongdoing<-"https://open.canada.ca/data/dataset/6e75f19c-d19d-48aa-984e-609
 
 URLS1<-c(URL_ati,URL_ati_nil,URL_contracts,URL_contracts_nil,
        URL_contracts_agg,URL_reclass,
-       URL_reclass_nil,URL_travela,URL_travelq,URL_travel_nil,
+       URL_reclass_nil,URL_travela,URL_travel_nil,
        URL_hosp,URL_hosp_nil,URL_wrongdoing)
 URLS2<-c(URL_grants,URL_grants_nil,URL_dac,URL_bn,URL_qp)
 
 wget(URLS1,quote="")
 wget(URLS2,quote="")
-
+wget(URL_travelq,quote="") #isolating travelq since it was giving an error
 
   
 ati<-read.csv("ati.csv")
