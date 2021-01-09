@@ -7,7 +7,7 @@ system("sudo apt-get install libcurl4-openssl-dev")
 install.packages("curl")
 library('curl')
 install.packages("jsonlite")
-install.packages("HelpersMG")f
+install.packages("HelpersMG")
 install.packages("dplyr")
 library(jsonlite)
 library(HelpersMG)
