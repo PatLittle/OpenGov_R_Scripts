@@ -1,10 +1,13 @@
 ########################################################################################
 # simple way to track the number of COVID related datasets published on Open.Canada.ca #
 ########################################################################################
+
+system("sudo apt-get install libcurl4-openssl-dev")
+
 install.packages("curl")
 library('curl')
 install.packages("jsonlite")
-install.packages("HelpersMG")
+install.packages("HelpersMG")f
 install.packages("dplyr")
 library(jsonlite)
 library(HelpersMG)
