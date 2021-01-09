@@ -1,7 +1,7 @@
 ########################################################################################
 # simple way to track the number of COVID related datasets published on Open.Canada.ca #
 ########################################################################################
-install.packages(c("jsonlite","HelpersMG","dplyr"))
+install.packages(c("jsonlite","HelpersMG","dplyr","curl"))
 library(jsonlite)
 library(HelpersMG)
 library(dplyr)
