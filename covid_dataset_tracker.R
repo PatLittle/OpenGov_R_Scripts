@@ -98,4 +98,21 @@ combineddata<-rbind(q1data,q2data,q3data,q4data,q5data)
 uniquedata<-distinct(combineddata)
 
 setwd("/home/runner/work/OpenGov_R_Scripts/OpenGov_R_Scripts")
-write.table(uniquedata, file="COVID-dataset-tracker.csv",sep=',', row.names=F, col.names=T)
+write.table(uniquedata, file="COVID-dataset-list.csv",sep=',', row.names=F, col.names=T)
+
+
+### Analysis/Summary Section ###
+
+total<-nrow(uniquedata)
+date<-date()
+
+federal<-sum(uniquedata$jursdiction == 'federal')
+prov<-sum(uniquedata$jursdiction == 'provincial')
+muni<-sum(uniquedata$jursdiction == 'municipal')
+
+dataset<-sum(uniquedata$type == 'dataset')
+info<-sum(uniquedata$type == 'info')
+
+tracker<-cbind.data.frame(date,total,dataset,info,federal,prov,muni)
+
+write.table(tracker,file="COVID-dataset-tracker.csv",sep=',', append = T, row.names=F, col.names=F)
