@@ -1,0 +1,22 @@
+on:
+  push:    
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '0 12,18,0 * * *'
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: |
+          echo $PWD
+      - uses: r-lib/actions/setup-r@master
+        with:
+          r-version: '4.0.2'
+      - run: |
+          Rscript covid_dataset_tracker.R
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push
