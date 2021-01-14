@@ -10,6 +10,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: |
           echo $PWD
+          wget -v https://registry.open.canada.ca 
+          wget -v https://open.canada.ca
       - uses: r-lib/actions/setup-r@master
         with:
           r-version: '4.0.2'
