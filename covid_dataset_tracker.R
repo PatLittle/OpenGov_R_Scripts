@@ -14,6 +14,7 @@ library(HelpersMG)
 library(dplyr)
 
 
+
 #running several queries in order to match the solr synonyms at 
 #https://github.com/open-data/ogc_search/blob/4931db3869510abf869c0a1334e7f6afea042101/ogc_search/open_data/solr/lang/synonyms.txt
 #this should reduce likelihood of having different results here than from search.open.canada.ca 
