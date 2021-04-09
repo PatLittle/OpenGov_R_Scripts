@@ -1,7 +1,7 @@
 ---
 title: "Geogratis Analysis"
 author: "Patrick Little"
-date: '2021-04-08'
+date: '2021-04-09'
 output:
   html_document:
     code_folding: hide
@@ -10,6 +10,9 @@ output:
 
 ```{r setup, include=T, message=FALSE, warning = FALSE}
 knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning = FALSE)
+library(remotes)
+
+library(ckanr)
 library(knitr)
 library(tidyverse)
 library(purrr)
@@ -21,6 +24,8 @@ library(openxlsx)
 library(tidyverse)
 library(plyr)
 library(gtools)
+
+
 #Importing the packages we need to use and setting the option on how the output looks
 ```
 
@@ -187,7 +192,29 @@ ggplot(remove_dls[1:412,], aes(downloads)) + geom_histogram(bins=100)+labs(title
 aes(label = ..count..),position=position_stack(vjust=0.5))
 ```
 
+<br>
+Here we can see the top 10 most frequently downloaded datasets from this group.
 
+```{r}
+ckanr_setup(url="https://open.canada.ca/data")
+
+api_results<-data.frame("ID","Title","Description","Link", row.names = F)
+names(api_results)<-c("ID","Title","Description","Link")
+
+
+for (i in remove_dls$ID[1:10]){
+   data<-package_show(i)
+   ID<-data$id
+   Title<-data$title_translated$en
+   Description<-data$notes_translated$en
+   Link<-paste0("https://open.canada.ca/data/en/dataset/",as.character(i))
+   api_results<-api_results %>% add_row(ID,Title,Description,Link)
+}
+
+api_results<-merge(x = api_results, y = dl_df, by = "ID", all.x = F) %>% arrange(desc(downloads))
+
+kable(api_results)
+```
 
 
 
