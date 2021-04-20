@@ -1,6 +1,6 @@
-library(jsonlite)
-library(tidyverse)
 
+library(tidyverse)
+library(jsonlite)
 
 #R.utils::gunzip("od-do-canada.jl_2021-03-24.gz", remove=F) #taking the metadata catalogue jsonlines and gunzipping
 #R.utils::gunzip("od-do-canada.jl_2021-03-25.gz", remove=F) #taking the metadata catalogue jsonlines and gunzipping
@@ -91,7 +91,7 @@ date_last_mod<-q4$metadata_modified
 q4data<-data.frame(ID,org,title,collection,date_created,date_last_mod)
 names(q4data)<-c("ID","org","title","collection","date_created","date_last_mod")
 for(i in 2:length(a15_lines)){ #loop over this for each line of json - except the 1st line, append each line to the dataframe
-  q4<-fromJSON(m31_lines[[i]])
+  q4<-fromJSON(a15_lines[[i]])
   ID<-q4$id
   org<-q4$organization$name
   title<-q4$title
@@ -115,4 +115,21 @@ delta_31st<-anti_join(delta_stat,q3data,by="ID")
 
 delta_a15<-anti_join(delta_stat,q4data,by="ID")
 
+stat1extra<-anti_join(delta_a15,delta_31st,by="ID")
+
 write.csv(delta_stat,file="deleted_statcan.csv")
+
+
+
+library(jqr)
+
+output_file<-tempfile()
+output<-file(output_file,'wt')
+
+for(i in 1:length(m24_lines)){
+    line<-fromjson(m24_lines[i])
+    if(uuid %in% line{
+      writeLines(line, output)
+      }
+}
+
