@@ -3,14 +3,14 @@ library(googleAnalyticsR)
 library(tidyr)
 
 #opens authentication in new window
-#ga_auth()
+ga_auth()
 
 
 
 #set the ga view ID, start date, end date. 
 myid<-68455797
 datestart<-"2020-06-01"
-dateend<-"2021-02-28"
+dateend<-"2021-03-31"
 
 #read in the dataset list generated separately within the repo, then create a list of UUIDs
 datasets<-read.table("COVID-dataset-list.csv", header=T, sep = ",", stringsAsFactors = F)
@@ -62,6 +62,6 @@ overallnumbers$downloads<-sum(as.numeric(outputclean$downloads))
 overallnumbers$pageviews<-sum(as.numeric(outputclean$pageviews))
 overallnumbers$X..<-NULL
 
-write.table(overallnumbers, file="covid-datasets-total-analytics.csv", append=FALSE, sep=",",row.names=F,col.names=T, fileEncoding = "UTF-8")
+write.table(overallnumbers, file="covid-datasets-total-analytics.csv", append=TRUE, sep=",",row.names=F,col.names=F, fileEncoding = "UTF-8")
 
 
