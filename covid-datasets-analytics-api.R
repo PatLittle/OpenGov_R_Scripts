@@ -8,7 +8,7 @@ library(tidyr)
 #set the ga view ID, start date, end date. 
 myid<-68455797
 datestart<-"2020-06-01"
-dateend<-"2021-04-30"
+dateend<-"2021-05-31"
 
 #read in the dataset list generated separately within the repo, then create a list of UUIDs
 datasets<-read.table("COVID-dataset-list.csv", header=T, sep = ",", stringsAsFactors = F)
