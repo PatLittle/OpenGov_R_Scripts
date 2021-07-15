@@ -19,3 +19,6 @@ qpnotes.csv
 wrongdoing.csv
 .Rhistory
 *.jsonl
+.Rproj.user
+.RData
+*.gz
