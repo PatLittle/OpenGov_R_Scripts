@@ -46,7 +46,7 @@ toc()
 
 list_of_res=list_of_res[-c(1),]
 
-write.table(list_of_res,file="list_of_DS_resources.csv",sep=",",row.names = FALSE)
+write.table(list_of_res,file="list_of_DS_resources.csv",sep=",",row.names = FALSE, col.names = T)
 
 
 num_dept<-length(unique(list_of_res$owner))
@@ -55,5 +55,6 @@ num_res<-length(unique(list_of_res$resource_id))
 date<-date()
 
 DS_num_tracker<-cbind(date,num_dept,num_datasets,num_res)
+
 
 write.table(DS_num_tracker,file="DataStore_Numbers_Tracker.csv",append=T,row.names = F,sep=",", col.names = F)
