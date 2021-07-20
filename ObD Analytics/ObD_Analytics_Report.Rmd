@@ -4,7 +4,7 @@ author: "Patrick Little"
 date: "2021-07-20"
 output:
   html_document:
-    code_folding: show
+    code_folding: hide
 ---
 
 ```{r setup, include=FALSE, message=FALSE}
@@ -139,7 +139,7 @@ This works out such that **`r percent(sum(combined$pageviews == 0, na.rm=T)/567)
 
 ### Highly Used Records
 
-In contrast to the vast majority of records that are largely ignored, certain datasets are highly used. Below we can see the most used records on ObD, by number of downloads. 
+In contrast to the vast majority of records that are largely ignored, certain records are highly used. Below we can see the most used records on ObD, by number of downloads. 
 
 ```{r}
 combined<-combined %>% arrange(desc(downloads))
@@ -160,14 +160,14 @@ mean_dl<-round(mean(combined$downloads), digits=2)
 xdls<-round(gc_mean_dl/mean_dl,digits = 0)
 
 ```
-On average for ObD a record received **`r mean_pv` pageviews** and **`r mean_dl` downloads**. This contrasts to **`r gc_mean_pv` pageviews and `r gc_mean_dl` downloads**, on average, for records with GCDocs in the name. GCDocs related records are getting approx. `r xdls`x more downloads than the overall ObD content.
+On average for ObD a record received **`r mean_pv` pageviews** and **`r mean_dl` downloads**. This contrasts to **`r gc_mean_pv` pageviews and `r gc_mean_dl` downloads**, on average, for records with GCDocs in the name. GCDocs related records are getting approx. **`r xdls`x** more downloads than the overall ObD content.
 
 In addition to GCDocs, there are other in demand records such as content from Open Government, and Statistics Canada. 
 
 
 ## Conclusions
 
-We should do something to move the most used content on top platforms that will continue to be supported in the future. For other content that is getting little to no usage, it should be decommissioned. 
+We should do something to move the most used content on to platforms that will continue to be supported in the future. For other content that is getting little to no usage, it should be decommissioned. 
 
 
 

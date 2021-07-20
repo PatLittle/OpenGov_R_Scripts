@@ -350,7 +350,7 @@ kable(formats_tbl, caption=&quot;Count of Contributor Records - ObD&quot;, paddi
 <p>This works out such that <strong>75%</strong> of records received no pageviews, and <strong>83%</strong> received no downloads during this period.</p>
 <div id="highly-used-records" class="section level3">
 <h3>Highly Used Records</h3>
-<p>In contrast to the vast majority of records that are largely ignored, certain datasets are highly used. Below we can see the most used records on ObD, by number of downloads.</p>
+<p>In contrast to the vast majority of records that are largely ignored, certain records are highly used. Below we can see the most used records on ObD, by number of downloads.</p>
 <pre class="r"><code>combined&lt;-combined %&gt;% arrange(desc(downloads))
 kable(head(combined,15))</code></pre>
 <table>
@@ -522,13 +522,13 @@ mean_pv&lt;-round(mean(combined$pageviews), digits=2)
 mean_dl&lt;-round(mean(combined$downloads), digits=2)
 
 xdls&lt;-round(gc_mean_dl/mean_dl,digits = 0)</code></pre>
-<p>On average for ObD a record received <strong>5.47 pageviews</strong> and <strong>2.29 downloads</strong>. This contrasts to <strong>80.2 pageviews and 38.32 downloads</strong>, on average, for records with GCDocs in the name. GCDocs related records are getting approx. 17x more downloads than the overall ObD content.</p>
+<p>On average for ObD a record received <strong>5.47 pageviews</strong> and <strong>2.29 downloads</strong>. This contrasts to <strong>80.2 pageviews and 38.32 downloads</strong>, on average, for records with GCDocs in the name. GCDocs related records are getting approx. <strong>17x</strong> more downloads than the overall ObD content.</p>
 <p>In addition to GCDocs, there are other in demand records such as content from Open Government, and Statistics Canada.</p>
 </div>
 </div>
 <div id="conclusions" class="section level2">
 <h2>Conclusions</h2>
-<p>We should do something to move the most used content on top platforms that will continue to be supported in the future. For other content that is getting little to no usage, it should be decommissioned.</p>
+<p>We should do something to move the most used content on to platforms that will continue to be supported in the future. For other content that is getting little to no usage, it should be decommissioned.</p>
 </div>
 
 
@@ -566,7 +566,7 @@ $(document).ready(function () {
 <!-- code folding -->
 <script>
 $(document).ready(function () {
-  window.initializeCodeFolding("show" === "show");
+  window.initializeCodeFolding("hide" === "show");
 });
 </script>
 
