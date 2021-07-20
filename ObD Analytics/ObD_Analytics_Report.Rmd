@@ -1,0 +1,174 @@
+---
+title: "Open by Default Analytics Analysis"
+author: "Patrick Little"
+date: "2021-07-20"
+output:
+  html_document:
+    code_folding: show
+---
+
+```{r setup, include=FALSE, message=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r message=FALSE,warning=FALSE}
+library(ckanr)
+library(jsonlite)
+library(tidyverse)
+library(knitr)
+library(scales)
+library(googleAuthR)
+
+ckanr_setup(url="https://open.canada.ca/ckan/")
+
+datasets<-package_list(limit = 600)
+```
+
+```{r cache=TRUE, warning=FALSE}
+
+dataset_df<-data.frame(matrix("", nrow = 0, ncol = 5))
+names(dataset_df)<-c("format","keys","org","title","ID")
+
+for( i in 1:length(datasets)){
+
+  tmp<-package_show(datasets[[i]])
+  title<-tmp$title
+  resource_json<-toJSON(tmp$resources)
+  resource_df<-fromJSON(resource_json)
+  format<-paste(as.character(resource_df$format), collapse = " | ")
+  org<-tmp$organization$title
+  keys<-paste(as.character(tmp$keywords$en), collapse = " | ")
+  ID<-tmp$id
+  dataset_df<-dataset_df %>% add_row(format,keys,org,title,ID)
+}
+
+
+datestart<-"2021-05-25"
+dateend<-"2021-07-19"
+```
+
+```{r eval=FALSE}
+
+library(googleAnalyticsR)
+ga_auth(email="open.ouvertcanada@gmail.com")
+#set the ga view ID, start date, end date. 
+myid<-68455797
+
+
+ID_list<-dataset_df$ID
+
+output<-data.frame("a","b","c","d")
+
+for (p in 1:length(ID_list)){
+
+querypage<-paste0("ga:pagePath=@",ID_list[p],sep="")
+
+print(querypage)
+
+web_data <- data.frame(google_analytics(myid, 
+                               date_range = c(datestart, dateend),
+                               metrics = c("totalEvents","pageviews"),
+                               dimensions = c("isoYearIsoWeek"), 
+                               anti_sample = TRUE,
+                               filtersExpression = querypage), ID_list[p])
+
+colnames(output)<-colnames(web_data)
+output<-rbind(output,web_data, rownames=F, colnames=F)
+
+
+}
+
+#cache the Google Analytics API call in a file so we don't need to rerun.
+write.table(output,file="apidata.csv",sep=",",col.names = F, row.names = F)
+
+```
+
+```{r}
+#clean up the output removing some artifacts
+output<-read.table(file="apidata.csv", sep = ",")
+
+names(output)<-c("year/week", "downloads","pageviews","ID")
+outputclean<-output[ !output$ID %in% c(FALSE,"d"), ]
+
+output_byid<-outputclean %>% group_by(ID) %>% summarise(downloads = sum(as.numeric(downloads)), pageviews = sum(as.numeric(pageviews))) %>% arrange(desc(downloads))
+
+combined<-merge(dataset_df,output_byid,by="ID")
+
+#kable(head(output_byid,25))
+
+
+
+```
+
+## Overview 
+
+Open by Default (ObD) is a separate version of CKAN, setup to facilitate temporary publication of working documents. It has now been a number of years since the majority of the content has been stagnant on the platform.
+<br>
+
+The analytics used in this report were collected from 2021-05-25 - `r dateend`. Due to analytics configuration issues data from a larger collection period is unavailable.
+
+
+## Content Holdings
+
+ObD contains **`r length(datasets)` records**, consisting of mostly documents that would not meet the relevant GC content standards for online posting. 
+
+The breakdown of records by file format is:
+
+```{r warning=FALSE}
+formats_tbl<-combined %>% as.tibble() %>% count(str_extract(format,"(\\w+)")) %>% arrange(desc(n))
+names(formats_tbl)<-c("format","count")
+kable(formats_tbl, caption="Count of Resource Format - ObD", padding=5)
+```
+The breakdown of number of records by department is:
+
+```{r}
+formats_tbl<-combined %>% as.tibble() %>% count(str_extract(org,"[^|]+")) %>% arrange(desc(n))
+names(formats_tbl)<-c("department","count")
+kable(formats_tbl, caption="Count of Contributor Records - ObD", padding=5)
+```
+## Analytics
+
+In the 2 months of data contained in this report we observed **`r sum(combined$downloads)` downloads** and **`r sum(combined$pageviews)` pageviews** on ObD records.
+
+Like we've seen with other groups of legacy content such as Geogratis, a small number of individual records are seeing the vast majority of the usage, and most content is getting very little or no traffic.
+
+Out of the `r sum(combined$downloads)` downloads and `r sum(combined$pageviews)` pageviews, we found that `r sum(combined$downloads == 0, na.rm=T)` records out of the 567 total received 0 downloads during the two months of data collected. Similarly we found that `r sum(combined$pageviews == 0, na.rm=T)` records received no pageviews.
+
+This works out such that **`r percent(sum(combined$pageviews == 0, na.rm=T)/567)`** of records received no pageviews, and **`r percent(sum(combined$downloads == 0, na.rm=T)/567)`** received no downloads during this period.
+
+### Highly Used Records
+
+In contrast to the vast majority of records that are largely ignored, certain datasets are highly used. Below we can see the most used records on ObD, by number of downloads. 
+
+```{r}
+combined<-combined %>% arrange(desc(downloads))
+kable(head(combined,15))
+```
+<br>
+Looking at the names of the most heavily used content on ObD, we see a pattern quickly emerge. Out of the 15 most downloaded records, 10 contain GCDocs in the name. 
+
+```{r}
+gcdocs<-filter(combined,grepl('GCDocs',title))
+
+gc_mean_dl<-round(mean(gcdocs$downloads),digits = 2)
+gc_mean_pv<-round(mean(gcdocs$pageviews),digits=2)
+
+mean_pv<-round(mean(combined$pageviews), digits=2)
+mean_dl<-round(mean(combined$downloads), digits=2)
+
+xdls<-round(gc_mean_dl/mean_dl,digits = 0)
+
+```
+On average for ObD a record received **`r mean_pv` pageviews** and **`r mean_dl` downloads**. This contrasts to **`r gc_mean_pv` pageviews and `r gc_mean_dl` downloads**, on average, for records with GCDocs in the name. GCDocs related records are getting approx. `r xdls`x more downloads than the overall ObD content.
+
+In addition to GCDocs, there are other in demand records such as content from Open Government, and Statistics Canada. 
+
+
+## Conclusions
+
+We should do something to move the most used content on top platforms that will continue to be supported in the future. For other content that is getting little to no usage, it should be decommissioned. 
+
+
+
+

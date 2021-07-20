@@ -1,0 +1,16 @@
+base
+DBI
+ckanr
+jsonlite
+tidyverse
+ggplot2
+tibble
+tidyr
+readr
+purrr
+dplyr
+stringr
+forcats
+knitr
+scales
+googleAuthR
