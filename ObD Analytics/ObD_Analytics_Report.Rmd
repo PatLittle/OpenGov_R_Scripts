@@ -3,12 +3,12 @@ title: "Open by Default Analytics Analysis"
 author: "Patrick Little"
 date: "2021-07-20"
 output:
-  html_document:
-    code_folding: hide
+  html_document
+    
 ---
 
 ```{r setup, include=FALSE, message=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = FALSE)
 ```
 
 
@@ -170,5 +170,9 @@ In addition to GCDocs, there are other in demand records such as content from Op
 We should do something to move the most used content on to platforms that will continue to be supported in the future. For other content that is getting little to no usage, it should be decommissioned. 
 
 
+## Code Appendix
+
+```{r ref.label=knitr::all_labels(), echo=TRUE, eval=FALSE}
+```
 
 
