@@ -1,10 +1,10 @@
 ############################################################################
 #simple way to calculate number of PD records on the Open Government Portal#
+#                                                                          #
 ############################################################################
 
 install.packages("HelpersMG")
 library(HelpersMG)
-
 
 URL_ati<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/19383ca2-b01a-487d-88f7-e1ffbc7d39c2/download/ati.csv"
 URL_ati_nil<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/5a1386a5-ba69-4725-8338-2f26004d7382/download/ati-nil.csv"
@@ -34,7 +34,6 @@ URLS2<-c(URL_grants,URL_grants_nil,URL_dac,URL_bn,URL_qp)
 wget(URLS1,quote="")
 wget(URLS2,quote="")
 wget(URL_travelq,quote="") #isolating travelq since it was giving an error
-
   
 ati<-read.csv("ati.csv")
 ati_nil<-read.csv("ati-nil.csv")
