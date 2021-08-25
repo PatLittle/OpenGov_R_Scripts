@@ -1,8 +1,9 @@
 on:
-      
   schedule:
     # * is a special character in YAML so you have to quote this string
     - cron:  '0 11 * * *'
+  workflow_dispatch:
+  
 jobs:
   build:
     runs-on: ubuntu-latest
