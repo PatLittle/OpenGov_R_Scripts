@@ -13,7 +13,7 @@ jobs:
           echo $PWD
       - uses: r-lib/actions/setup-r@master
         with:
-          r-version: '4.0.2'
+          r-version: '4.1.0'
       - run: |
           Rscript datastore_report/datastore_tracker.R
           git config user.name github-actions
