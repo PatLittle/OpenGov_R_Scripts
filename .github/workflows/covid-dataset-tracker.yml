@@ -12,7 +12,7 @@ jobs:
           echo $PWD
       - uses: r-lib/actions/setup-r@master
         with:
-          r-version: '4.0.2'
+          r-version: '4.1.0'
       - run: |
           Rscript covid_dataset_tracker.R
           git config user.name github-actions
