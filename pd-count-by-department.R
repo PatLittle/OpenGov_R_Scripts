@@ -32,10 +32,12 @@ URLS1<-c(URL_ati,URL_ati_nil,URL_contracts,URL_contracts_nil,
          URL_contracts_agg,URL_reclass,
          URL_reclass_nil,URL_travela,URL_travel_nil,
          URL_hosp,URL_hosp_nil,URL_wrongdoing)
-URLS2<-c(URL_grants,URL_grants_nil,URL_dac,URL_bn,URL_qp)
+URLS2<-c(URL_grants_nil,URL_dac,URL_bn,URL_qp)
+URLS3<-c(URL_grants)
 
 wget(URLS1,quote="")
 wget(URLS2,quote="")
+wget(URLS3,quote="")
 wget(URL_travelq,quote="") #isolating travelq since it was giving an error
 
 
