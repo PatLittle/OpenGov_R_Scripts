@@ -3,15 +3,19 @@
 # OUTLOOK
 
 # Before you can run the script you need to generate the json blog of user data.You do this 
-# in ckan by running action user_list. The simplest way to do that is while logged into the
-# registry paste the URL 'https://registry.open.canada.ca/api/action/user_list' into a new tab
-# then save the output as user_list.json
+# in ckan by running action org_list. The simplest way to do that is while logged into the
+# registry paste the URL 'https://registry.open.canada.ca/api/action/org_list' into a new tab
+# then save the output as org_list.json
 
 
 
 library(jsonlite)
-user_list<-fromJSON("user_list.json")
-emails<-as.data.frame(user_list$result$email)
-emails_blob<-paste(as.character(emails[,1]),"; ")
-write(emails_blob,"emails.txt")
+org_list<-fromJSON("organization_list.json")
+fullname<-as.data.frame(org_list$result$display_name)
+name<-as.data.frame(org_list$result$name)
+created_date<-as.data.frame(org_list$result$created)
 
+
+registry_orgs<-cbind.data.frame(fullname,name,created_date)
+
+write.csv(registry_orgs, file="registry_orgs.csv",row.names = F,fileEncoding = "UTF-8")
