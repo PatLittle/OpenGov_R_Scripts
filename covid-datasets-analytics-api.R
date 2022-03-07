@@ -32,7 +32,7 @@ web_data <- data.frame(google_analytics(myid,
                                date_range = c(datestart, dateend),
                                metrics = c("totalEvents","pageviews"),
                                dimensions = c("yearMonth"), 
-                               anti_sample = TRUE,
+                               anti_sample = FALSE,
                                filtersExpression = querypage), pagex[i])
 
 colnames(output)<-colnames(web_data)

@@ -2,6 +2,7 @@
 #simple way to calculate number of PD records on the Open Government Portal#
 ############################################################################
 
+options(timeout = max(300, getOption("timeout")))
 
 install.packages("HelpersMG")
 library(HelpersMG)
