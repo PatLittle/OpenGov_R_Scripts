@@ -25,12 +25,13 @@ URL_dac<-"https://open.canada.ca/data/dataset/8634f1c9-597e-416d-91f2-df24d2ffbe
 URL_bn<-"https://open.canada.ca/data/dataset/ee9bd7e8-90a5-45db-9287-85c8cf3589b6/resource/299a2e26-5103-4a49-ac3a-53db9fcc06c7/download/briefingt.csv"
 URL_qp<-"https://open.canada.ca/data/dataset/ecd1a913-47da-47fc-8f96-2432be420986/resource/c55a2862-7ec4-462c-a844-22acab664812/download/qpnotes.csv"
 URL_wrongdoing<-"https://open.canada.ca/data/dataset/6e75f19c-d19d-48aa-984e-609c8d9bc403/resource/84a77a58-6bce-4bfb-ad67-bbe452523b14/download/wrongdoing.csv"
+URL_adminair<-"https://open.canada.ca/data/dataset/98abeb62-7c76-4dfb-a134-1551f55ede55/resource/1495406e-338c-43ec-9995-ec8d8c90d17e/download/adminaircraft.csv"
 
 URLS1<-c(URL_ati,URL_ati_nil,URL_contracts,URL_contracts_nil,
        URL_contracts_agg,URL_reclass,
        URL_reclass_nil,URL_travela,URL_travel_nil,
        URL_hosp,URL_hosp_nil,URL_wrongdoing)
-URLS2<-c(URL_grants,URL_grants_nil,URL_dac,URL_bn,URL_qp)
+URLS2<-c(URL_grants,URL_grants_nil,URL_dac,URL_bn,URL_qp, URL_adminair)
 
 wget(URLS1,quote="")
 wget(URLS2,quote="")
@@ -54,6 +55,7 @@ dac<-read.csv("dac.csv")
 bn<-read.csv("briefingt.csv")
 qpnotes<-read.csv("qpnotes.csv")
 wrongdoing<-read.csv("wrongdoing.csv")
+adminair<-read.csv("adminaircraft.csv")
 
 report<-data.frame("")
 
@@ -76,6 +78,7 @@ report$dac<-nrow(dac)
 report$qpnotes<-nrow(qpnotes)
 report$bn<-nrow(bn)
 report$wrongdoing<-nrow(wrongdoing)
+report$adminair<-nrow(adminair)
 report$X..<-NULL
 report$sum<-sum(report[2:19])
 
