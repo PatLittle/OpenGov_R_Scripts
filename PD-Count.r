@@ -6,7 +6,7 @@ options(timeout = max(300, getOption("timeout")))
 
 install.packages("HelpersMG")
 install.packages("jsonlite")
-install.packages("jqr")
+install.packages("jqr", verbose = T)
 library(HelpersMG)
 library(jsonlite)
 library(jqr)
