@@ -11,9 +11,11 @@ options(timeout = max(300, getOption("timeout")))
 install.packages("HelpersMG")
 install.packages("jsonlite")
 install.packages("jqr", verbose = T)
+install.packages("R.utils")
 library(HelpersMG)
 library(jsonlite)
 library(jqr)
+library(R.utils)
 
 
 #Structured Resources Part#
