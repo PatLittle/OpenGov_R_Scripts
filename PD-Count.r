@@ -2,6 +2,10 @@
 #simple way to calculate number of PD records on the Open Government Portal#
 ############################################################################
 
+system("sudo apt-get install libjq-dev")
+
+
+
 options(timeout = max(300, getOption("timeout")))
 
 install.packages("HelpersMG")
