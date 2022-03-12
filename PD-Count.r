@@ -5,7 +5,14 @@
 options(timeout = max(300, getOption("timeout")))
 
 install.packages("HelpersMG")
+install.packages("jsonlite")
+install.packages("jqr")
 library(HelpersMG)
+library(jsonlite)
+library(jqr)
+
+
+#Structured Resources Part#
 
 URL_ati<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/19383ca2-b01a-487d-88f7-e1ffbc7d39c2/download/ati.csv"
 URL_ati_nil<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/5a1386a5-ba69-4725-8338-2f26004d7382/download/ati-nil.csv"
@@ -90,3 +97,44 @@ setwd("/home/runner/work/OpenGov_R_Scripts/OpenGov_R_Scripts")
 write.table(report, file="PD-Count.csv",sep=',', append=T, row.names=F, col.names=F)
 
 
+#non-structured part#
+
+wget("https://open.canada.ca/static/od-do-canada.jsonl.gz")
+R.utils::gunzip("od-do-canada.jsonl.gz", remove=T) #taking the metadata catalogue jsonlines and gunzipping
+metadata<-readLines("od-do-canada.jsonl") #reading it into R line by line
+
+#metadata<-lapply(metadata,unlist)
+
+transition<-length(jq(metadata,'{collection}') %>% jqr::select(.collection =="transition"))
+transition_deputy<-length(jq(metadata,'{collection}') %>% jqr::select(.collection =="transition_deputy"))
+parliament_report<-length(jq(metadata,'{collection}') %>% jqr::select(.collection =="parliament_report"))
+parliament_committee<-length(jq(metadata,'{collection}') %>% jqr::select(.collection =="parliament_committee"))
+parliament_committee_deputy<-length(jq(metadata,'{collection}') %>% jqr::select(.collection =="parliament_committee_deputy"))
+
+non_str_report<-data.frame("")
+non_str_report$date<-date()
+non_str_report$X..<-NULL
+non_str_report$transition<-as.integer(transition)
+non_str_report$transition_deputy<-as.integer(transition_deputy)
+non_str_report$parliament_report<-as.integer(parliament_report)
+non_str_report$parliament_committee<-as.integer(parliament_committee)
+non_str_report$parliament_committee_deputy<-as.integer(parliament_committee_deputy)
+
+non_str_report$sum<-sum(non_str_report[2:6])
+write.table(non_str_report, file="PD-Count-nonStr.csv",sep=',', append=T, row.names=F, col.names=F)
+
+#structured v non report
+
+sVn_report<-data.frame("")
+sVn_report$date<-date()
+sVn_report$X..<-NULL
+sVn_report$structured<-as.integer(report$sum)
+sVn_report$non_structured<-as.integer(non_str_report$sum)
+sVn_report$total<-sum(sVn_report[2:3])
+write.table(sVn_report, file="sVn-report.csv",sep=',', append=T, row.names=F, col.names=F)
+
+#delete the jsonlines file from the directory so it doesn't throw an error when I regenerate the report next time
+if (file.exists("od-do-canada.jsonl")) {
+  #Delete file if it exists
+  file.remove("od-do-canada.jsonl")
+} 
