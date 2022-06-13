@@ -46,6 +46,9 @@ toc()
 
 list_of_res=list_of_res[-c(1),]
 
+
+setwd("/home/runner/work/OpenGov_R_Scripts/OpenGov_R_Scripts")
+
 write.table(list_of_res,file="list_of_DS_resources.csv",sep=",",row.names = FALSE, col.names = T)
 
 
