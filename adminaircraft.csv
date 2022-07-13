@@ -1,59 +1,21 @@
-<!DOCTYPE html><!--[if lt IE 9]><html class="no-js lt-ie9" lang="en" dir="ltr"><![endif]--><!--[if gt IE 8]><!-->
-<html class="no-js" lang="en" dir="ltr">
-<!--<![endif]-->
-<head>
-<meta charset="utf-8">
-<!-- Web Experience Toolkit (WET) / Boîte à outils de l'expérience Web (BOEW)
-		wet-boew.github.io/wet-boew/License-en.html / wet-boew.github.io/wet-boew/Licence-fr.html -->
-<title>Open Canada / Gouvernement ouvert</title>
-<meta content="width=device-width,initial-scale=1" name="viewport">
-<!-- Meta data -->
-<meta name="robots" content="noindex, nofollow, noarchive">
-<!-- Meta data-->
-<!--[if gte IE 9 | !IE ]><!-->
-<link href="/GCWeb/assets/favicon.ico" rel="icon" type="image/x-icon">
-<link rel="stylesheet" href="/GCWeb/css/theme-srv.min.css">
-<!--<![endif]-->
-<!--[if lt IE 9]>
-<link href="/GCWeb/assets/favicon.ico" rel="shortcut icon" />
-<link rel="stylesheet" href="/GCWeb/css/ie8-theme-srv.min.css" />
-<script src="/wet-boew/js/jquery/1.11.1/jquery.js"></script>
-<script src="/wet-boew/js/ie8-wet-boew.min.js"></script>
-<![endif]-->
-<noscript><link rel="stylesheet" href="/wet-boew/css/noscript.min.css" /></noscript>
-</head>
-<body vocab="http://schema.org/" typeof="WebPage">
-<header role="banner" id="wb-bnr" class="container">
-<div class="row">
-<div class="col-sm-6">
-<object id="gcwu-sig" type="image/svg+xml" tabindex="-1" role="img" data="/GCWeb/assets/sig-blk-en.svg" aria-label="Government of Canada"></object>
-</div>
-<div class="col-sm-6">
-<object id="wmms" type="image/svg+xml" tabindex="-1" role="img" data="/GCWeb/assets/wmms-blk.svg" aria-label="Symbol of the Government of Canada"></object>
-</div>
-</div>
-</header>
-<main role="main" property="mainContentOfPage" class="container">
-<div class="row mrgn-tp-lg">
-<h1 class="wb-inv">Sorry, we are down for maintenance / <span lang="fr">Nous sommes désolés, mais ce site est hors service pour des raisons de maintenance.</span></h1>
-<section class="col-md-6">
-<h2><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span> Sorry, we are down for maintenance</h2>
-<p>You can view an archived version of the <a href="https://web.archive.org/web/20180626130112/https:/open.canada.ca/en">Open Government Portal</a> or connect with us on twitter <a href="https://twitter.com/OpenGovCan">@OpenGovCan</a></p>
-</section>
-<section class="col-md-6" lang="fr">
-<h2><span class="glyphicon glyphicon-warning-sign mrgn-rght-md"></span> Nous sommes désolés, mais ce site est hors service pour des raisons de maintenance.</h2>
-<p>Vous pouvez consulter la version archivée du <a href="https://web.archive.org/web/20180623161706/https://ouvert.canada.ca/fr">Portail du gouvernement ouvert</a> ou nous joindre par Twitter. <a href="https://twitter.com/GouvOuvertCan">@GouvOuvertCan</a></p>
-</section>
-</div>
-</main>
-<!--[if gte IE 9 | !IE ]><!-->
-<script src="/wet-boew/js/jquery/2.1.4/jquery.js"></script>
-<script src="/wet-boew/js/wet-boew.min.js"></script>
-<!--<![endif]-->
-<!--[if lt IE 9]>
-<script src="/wet-boew/js/ie8-wet-boew2.min.js"></script>
-
-<![endif]-->
-<script src="/GCWeb/js/theme.min.js"></script>
-</body>
-</html>
+﻿reference_number,minister,purpose_en,purpose_fr,start_date,end_date,locations_en,locations_fr,hours,passengers,additional_information_en,additional_information_fr
+C-2022-P10-00001,MND,National Defence Visit Europe and Ukraine,Visite de la Défense Nationale en Europe et en Ukraine,2022-01-29,2022-02-04,"Toronto, Canada; Prestwick, Scotland; Kiev, Ukraine; Brussels, Belgium; Riga, Latvia; Keflavik, Iceland; Ottawa, Canada","Toronto, Canada; Prestwick, Écosse; Kiev, Ukraine; Bruxelles, Belgique; Riga, Lettonie; Keflavik, Islande; Ottawa, Canada",29.3,"MCpl Christopher Auger, MCpl Julien Ouellette-Capp, Dan Nault, Vince Kirstein, Suneeta Millington, Manel Menouar, Michael Power, Bill Matthews, Hon. Anita Anand, MND",,
+C-2022-P11-00001,MND,National Defence Visit to Europe,Visite de la Défense Nationale en Europe,2022-02-14,2022-02-20,"Ottawa, Canada; Brussels , Belgium; Paris, France; Munich, Germany; Edinburgh, England; Gander, Canada; Toronto, Canada","Ottawa, Canada; Bruxelles, Belgique; Paris, France; Munich, Allemagne; Edinburgh, Angleterre; Gander, Canada; Toronto, Canada",23.3,"Patrick Burchat, Peter Hammerschmidt, Patrice Desrochers, Ethan Stein, Sabrina Kim, Michael Power, Audrey Rivera, Hon. Anita Anand, MND",,
+C-2022-P12-00001,GG,Official Government Travel,Voyage officiel du gouvernement,2022-03-14,2022-03-15,"London, United Kingdom; Gander, Canada; Ottawa, Canada","Londres, Angleterre; Gander, Canada; Ottawa, Canada",15.2,"Her Excellency Mary May Simon, His Excellency Whit Fraser, Ian McCowan, Natalie Babin-Dufresne, Katie Brambley, Maj Stephanie LeBlanc, MCpl Anis Assari",,
+C-2022-P12-00002,GG,Official Government Travel,Voyage officiel du gouvernement,2022-03-31,2022-04-01,"Ottawa, Canada; Toronto, Canada","Ottawa, Canada; Toronto, Canada",1.6,"Her Excellency Mary May Simon, His Excellency Whit Fraser, Ian McCowan, Heather Munro, Mireille Sylvester, Capt Simon Kassissia, Sgt Mathieu St-Amour",,
+C-2022-P12-00003,PM,Official Government Travel,Voyage officiel du gouvernement,2022-03-04,2022-03-04,"Ottawa, Canada; Toronto, Canada","Ottawa, Canada; Toronto, Canada",2,"Ben Chin, Cecely Roy, Alex Tetrault, Tahiya Bakht, Vandana Kattar, Akshay Grover, Rt. Hon. Justin Trudeau",,
+C-2022-P12-00004,PM,Official Government Tasking,Tâche officielle du gouvernement,2022-03-16,2022-03-16,"Ottawa, Canada; Toronto, Canada","Ottawa, Canada; Toronto, Canada",2.1,"James Armbruster, Vanessa Moussa, Riley Lange, Akshay Grover, Cecely Roy, Ben Chin, Adam Scotti, Philip Proulx, Rt. Hon. Justin Trudeau",,
+C-2022-P12-00005,PM,Official Government Tasking,Tâche officielle du gouvernement,2022-03-17,2022-03-17,"Ottawa, Canada; Toronto, Canada","Ottawa, Canada; Toronto, Canada",1.8,"Helena Kojo, Nathalie Gahimbare, Annabelle Archambault, James Armbruster, Akshay Grover, Tahiya Bahkt, Cecely Roy, Vandana Kattar, Adam Scotti, Philip Proulx, Rt. Hon. Justin Trudeau",,
+C-2022-P12-00006,PM,Official Government Tasking,Tâche officielle du gouvernement,2022-03-28,2022-03-30,"Ottawa, Canada; Toronto, Canada; Vancouver, Canada; Williams Lake, Canada","Ottawa, Canada; Toronto, Canada; Vancouver, Canada; Williams Lake, Canada",11.5,"Alex Tetrault, Deliah Bernard, Youmy Han, Terry Guillon, Ben Sparkes, James Armbruster, Cecely Roy, Akshay Grover, Ben Chin, Rt. Hon. Justin Trudeau",,
+C-2022-P12-00007,MND,NATO Visit,Visite de l'OTAN,2022-03-06,2022-03-09,"Ottawa, Canada; Toronto, Canada; Gander, Canada; Riga, Latvia; Naples, Italy; Shannon, Canada","Ottawa, Canada; Toronto, Canada; Gander, Canada; Riga, Lettonie; Naples, Italie; Shannon, Canada",23.8," Maj Aarthi Prabhakaran, Col Luc Girouard, Justin Horton, Sabrina Kim, Caitlin Mullan-Boudreau, Manel Menouar, General Wayne Eyre, Dustin West, Hon. Anita Anand, MND",,
+C-2021-P8-00001,PM,Memorial Service for the Honourable Premier William G. Davis,Service Funéraires pour l'Honorable Premier William G.,2021-11-04,2021-11-04,"Toronto, Canada","Toronto, Canada",1.9,"Terry Guillon, Akshay Grover, Tahiya Bakht, Ann-Clara Vaillancourt, Alex Tetrault, Cordell Johnson, Rt. Hon. Justin Trudeau",,
+C-2021-P8-00002,PM,Travel to Government Announcement,Voyage pour une annonce governementale,2021-11-15,2021-11-15,"Edmonton, Canada","Edmonton, Canada",8.4,"Rt. Hon. Justin Trudeau, Ayesha Chugthai, Annabelle Archambault, Ann-Clara Vaillancourt, Riley Lange, Cordell Johnson, Akshay Grover, John Brodhead, Hon. Chrystia Freeland",,
+C-2021-P8-00003,PM,Official Government travel (Floods),Voyage officiel (innondations),2021-11-25,2021-11-27,"Montreal, Canada; Abbotsford, Canada; Victoria, Canada","Montreal, Canada; Abbotsford, Canada; Victoria, Canada",10.9,"Raddey Barrack, Riley Lange, Annabelle Archambault, Youmy Han, Hon. Carla Qualtrough, Hon. Bill Blair, Ben Chin, Ann-Clara Vaillancourt, Adam Scotti, Dunerci Caceres, Karl Bouchereau, Rt. Hon. Justin Trudeau",,
+C-2021-P7-00001,PM,Official Government travel ,Voyage officiel,2021-10-17,2021-10-18,"Kamloops, Canada","Kamloops, Canada",9.2,"Rt. Hon. Justin Trudeau, Hon. Marc Miller, Akshay Grover, Katherine Koostachin, Andrée-lyne Hallé, Ann-clara Vaillancourt, Adam Scotti, Cordell Johnson, Douglas Bowers",,
+C-2022-P1-00001,PM,Official Government Travel,Voyage gouvernmental officiel,2022-04-08,2022-04-08,"Ottawa, Canada; Hamilton, Canada","Ottawa, Canada; Hamilton, Canada",2,"Adrienne Vaupshas, John Broadhead, Adam Scotti, Annabelle Archambault, Ben Sparkes, Cecely Roy, Akshay Grover, Riley Lange, James Armbruster, Hon. Chrystia Freeland, Rt. Hon. Justin Trudeau",,
+C-2022-P1-00002,PM,Official Government Travel,Voyage gouvernmental officiel,2022-04-10,2022-04-12,"Ottawa, Canada; Victoria, Canada; Edmonton, Canada; Montreal, Canada","Ottawa, Canada; Victoria, Canada; Edmonton, Canada; Montreal, Canada",10.7,"Ben Sparkes, Annabelle Archambault, Helena Kojo, Terry Guillon, Matt Stickney, Riley Lange, Akshay Grover, Ann-clara Vaillancourt, Adam Scotti, James Armbruster, Rt. Hon. Justin Trudeau",,
+C-2022-P1-00003,PM,Personal Travel,Voyage personnel,2022-04-13,2022-04-18,"Ottawa, Canada; Vancouver, Canada; Victoria, Canada","Ottawa, Canada; Vancouver, Canada; Victoria, Canada",10.4,"Hadrien Trudeau, Xavier Trudeau, Sophi Gregoire-Trudeau, Rt. Hon. Justin Trudeau",,
+C-2022-P1-00004,PM,Official Government Travel,Voyage gouvernmental officiel,2022-04-19,2022-04-19,"Ottawa, Canada; Charlo, Canada","Ottawa, Canada; Charlo, Canada",3.2,"Adam Scotti, Nick Fouchard, Yanick Rivest, Maria Morley, Annabelle Archambault, Cecely Roy, Ben Chin, James Armbruster, Riley Lange, Akshay Grover, Rt. Hon. Justin Trudeau",,
+C-2022-P1-00005,PM,Official Government Travel,Voyage gouvernmental officiel,2022-04-20,2022-04-20,"Ottawa, Canada; Waterloo, Canada","Ottawa, Canada; Waterloo, Canada",1.9,"Victor Esposito, Ben Chin, Cecely Roy, Riley Lange, Akshay Grover, Adam Scotti, James Armbruster, Rt. Hon. Justin Trudeau",,
+C-2022-P1-00006,PM,Official Government Travel,Voyage gouvernmental officiel,2022-04-21,2022-04-22,"Ottawa, Canada; Winnipeg, Canada","Ottawa, Canada; Winnipeg, Canada",5,"Terry Guillon, Hon. Dan Vandal, Hon. Patty Hadju, Vandana Kattar, Ann-clara Vaillancourt, Riley Lange, Gabriel Helfant, Akshay Grover, James Armbruster, Adam Scotti, Rt. Hon. Justin Trudeau",,
+C-2022-P1-00007,PM,Official Government Travel,Voyage gouvernmental officiel,2022-04-28,2022-04-29,"Ottawa, Canada; Montreal, Canada; Toronto, Canada","Ottawa, Canada; Montreal, Canada; Toronto, Canada",2.8,"William Harvey-Blouin, Philip Proulx, Alex Tetreault, Terry Guillon, Adam Grech, Riley Lange, Cecely Roy, Akshay Grover, James Armbruster, Rt. Hon. Justin Trudeau",,
