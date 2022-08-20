@@ -33,11 +33,11 @@ URLS1<-c(URL_ati,URL_ati_nil,URL_contracts,URL_contracts_nil,
          URL_reclass_nil,URL_travela,URL_travel_nil,
          URL_hosp,URL_hosp_nil,URL_wrongdoing)
 URLS2<-c(URL_grants_nil,URL_dac,URL_bn,URL_qp)
-URLS3<-c(URL_grants)
+#URLS3<-c(URL_grants)
 
 wget(URLS1,quote="")
 wget(URLS2,quote="")
-wget(URLS3,quote="")
+#wget(URLS3,quote="")
 wget(URL_travelq,quote="") #isolating travelq since it was giving an error
 
 
@@ -46,7 +46,7 @@ ati_nil<-read.csv("ati-nil.csv")
 contracts<-read.csv("contracts.csv")
 contracts_nil<-read.csv("contracts-nil.csv")
 contracts_agg<-read.csv("contractsa.csv")
-grants<-read.csv("grants.csv")
+grants<-read.csv(URL_grants)
 grants_nil<-read.csv("grants-nil.csv")
 reclass<-read.csv("reclassification.csv")
 reclass_nil<-read.csv("reclassification-nil.csv")
