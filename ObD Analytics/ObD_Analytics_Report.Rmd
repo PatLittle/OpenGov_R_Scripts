@@ -1,7 +1,7 @@
 ---
 title: "Open by Default Analytics Analysis"
 author: "Patrick Little"
-date: "2021-07-20"
+date: "2022-10-11"
 output:
   html_document
     
@@ -45,7 +45,7 @@ for( i in 1:length(datasets)){
 
 
 datestart<-"2021-05-25"
-dateend<-"2021-07-19"
+dateend<-"2022-10-05"
 ```
 
 ```{r eval=FALSE}
@@ -70,7 +70,7 @@ web_data <- data.frame(google_analytics(myid,
                                date_range = c(datestart, dateend),
                                metrics = c("totalEvents","pageviews"),
                                dimensions = c("isoYearIsoWeek"), 
-                               anti_sample = TRUE,
+                               anti_sample = FALSE,
                                filtersExpression = querypage), ID_list[p])
 
 colnames(output)<-colnames(web_data)
@@ -129,11 +129,11 @@ kable(formats_tbl, caption="Count of Contributor Records - ObD", padding=5)
 ```
 ## Analytics
 
-In the 2 months of data contained in this report we observed **`r sum(combined$downloads)` downloads** and **`r sum(combined$pageviews)` pageviews** on ObD records.
+In the 16 months of data contained in this report we observed **`r sum(combined$downloads)` downloads** and **`r format(sum(combined$pageviews), scientific=FALSE)` pageviews** on ObD records.
 
 Like we've seen with other groups of legacy content such as Geogratis, a small number of individual records are seeing the vast majority of the usage, and most content is getting very little or no traffic.
 
-Out of the `r sum(combined$downloads)` downloads and `r sum(combined$pageviews)` pageviews, we found that `r sum(combined$downloads == 0, na.rm=T)` records out of the 567 total received 0 downloads during the two months of data collected. Similarly we found that `r sum(combined$pageviews == 0, na.rm=T)` records received no pageviews.
+Out of the `r sum(combined$downloads)` downloads and `r format(sum(combined$pageviews), scientific=FALSE)` pageviews, we found that `r sum(combined$downloads == 0, na.rm=T)` records out of the 567 total received 0 downloads during the two months of data collected. Similarly we found that `r sum(combined$pageviews == 0, na.rm=T)` records received no pageviews.
 
 This works out such that **`r percent(sum(combined$pageviews == 0, na.rm=T)/567)`** of records received no pageviews, and **`r percent(sum(combined$downloads == 0, na.rm=T)/567)`** received no downloads during this period.
 
