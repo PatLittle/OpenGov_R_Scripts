@@ -9,7 +9,7 @@ options(timeout = max(300, getOption("timeout")))
 
 library(HelpersMG)
 
-URL_ati<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/19383ca2-b01a-487d-88f7-e1ffbc7d39c2/download/ati.csv"
+URL_ati<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/19383ca2-b01a-487d-88f7-e1ffbc7d39c2/download/ati-all.csv"
 URL_ati_nil<-"https://open.canada.ca/data/dataset/0797e893-751e-4695-8229-a5066e4fe43c/resource/5a1386a5-ba69-4725-8338-2f26004d7382/download/ati-nil.csv"
 URL_contracts<-"https://open.canada.ca/data/dataset/d8f85d91-7dec-4fd1-8055-483b77225d8b/resource/fac950c0-00d5-4ec1-a4d3-9cbebf98a305/download/contracts.csv"
 URL_contracts_nil<-"https://open.canada.ca/data/dataset/d8f85d91-7dec-4fd1-8055-483b77225d8b/resource/fa4ff6c4-e9af-4491-9d4e-2b468e415a68/download/contracts-nil.csv"
@@ -41,7 +41,7 @@ wget(URLS2,quote="")
 wget(URL_travelq,quote="") #isolating travelq since it was giving an error
 
 
-ati<-read.csv("ati.csv")
+ati<-read.csv("ati-all.csv")
 ati_nil<-read.csv("ati-nil.csv")
 contracts<-read.csv("contracts.csv")
 contracts_nil<-read.csv("contracts-nil.csv")
