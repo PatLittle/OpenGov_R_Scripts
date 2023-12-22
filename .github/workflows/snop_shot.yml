@@ -24,3 +24,6 @@ jobs:
         fullPage: false
         width: 400
         height: 400
+    - run: |
+       git commit .
+        
