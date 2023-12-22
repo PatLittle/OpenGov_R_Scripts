@@ -13,3 +13,14 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
+    - name: Create screenshots
+      uses: alexrogalskiy/github-action-screenshots@master
+      with:
+        url: 'https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards.html'
+        name: 'screenshot'
+        path: 'images'
+        extension: 'png'
+        encoding: 'binary'
+        fullPage: false
+        width: 400
+        height: 400
