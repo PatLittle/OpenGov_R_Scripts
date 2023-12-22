@@ -1,4 +1,4 @@
-name: CHAOSS Blog RSS Feed
+name: Get screen shot
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     - cron: "0 0/8 * * *"
 
 jobs:
-  gene-rss:
+  snip:
     runs-on: ubuntu-latest
     name: A job to gene RSS
     steps:
