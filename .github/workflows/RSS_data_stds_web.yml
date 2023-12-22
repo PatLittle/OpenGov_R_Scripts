@@ -1,0 +1,23 @@
+name: CHAOSS Blog RSS Feed
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0/8 * * *"
+
+jobs:
+  gene-rss:
+    runs-on: ubuntu-latest
+    name: A job to gene RSS
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Test Rssify
+      uses: tabhub/rssify@master
+      with:
+        title: Ref Data Standards Monitor
+        url: https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards.html
+        item-title-css: .title > a
+        item-url-css: .title > a
+        item-author-css: '.meta-author > a'
