@@ -1,0 +1,20 @@
+name: Monitor page over time
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0/8 * * *"
+
+jobs:
+  page2pdf:
+    runs-on: ubuntu-latest
+    name: page2pdf
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Screenshot Website
+        uses: swinton/screenshot-website@v1.x
+        with:
+          source: https://canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards
+          destination: screenshot.png
+          full-page: true
