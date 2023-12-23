@@ -1,29 +1,19 @@
-name: Get screen shot
+name: Monitor page over time
 
 on:
-  push:
   workflow_dispatch:
   schedule:
     - cron: "0 0/8 * * *"
 
 jobs:
-  snip:
+  page2pdf:
     runs-on: ubuntu-latest
-    name: A job to gene RSS
+    name: page2pdf
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Create screenshots
-      uses: alexrogalskiy/github-action-screenshots@master
-      with:
-        url: 'https://www.canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards.html'
-        name: 'screenshot'
-        path: 'images'
-        extension: 'png'
-        encoding: 'binary'
-        fullPage: false
-        width: 400
-        height: 400
-    - run: |
-       git commit .
-        
+      - uses: actions/checkout@v2
+      - id: page2pdf
+        uses: ./
+        with:
+          url: 'https://canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards'
+      - name: page2pdf output
+        run: echo "domain was ${{ steps.page2pdf.outputs.domain }}"
