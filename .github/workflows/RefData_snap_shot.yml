@@ -18,3 +18,9 @@ jobs:
           source: https://canada.ca/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards
           destination: screenshot.png
           full-page: true
+      - run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add .
+          git commit -m "generated"
+          git push -f origin master
