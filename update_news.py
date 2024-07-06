@@ -11,6 +11,10 @@ def fetch_json_data(url):
     else:
         return None
 
+# Function to clean text by removing newline characters
+def clean_text(text):
+    return text.replace('\n', ' ').replace('\r', ' ') if text else text
+
 # Function to separate text from URL in the TITLE fields using regex for accuracy
 def extract_title_url(entry):
     title_text_en = ""
@@ -36,10 +40,10 @@ def extract_title_url(entry):
         else:
             title_text_fr = entry['TITLE_FR']
     
-    entry['TITLE_TEXT_EN'] = title_text_en
-    entry['TITLE_URL_EN'] = title_url_en
-    entry['TITLE_TEXT_FR'] = title_text_fr
-    entry['TITLE_URL_FR'] = title_url_fr
+    entry['TITLE_TEXT_EN'] = clean_text(title_text_en)
+    entry['TITLE_URL_EN'] = clean_text(title_url_en)
+    entry['TITLE_TEXT_FR'] = clean_text(title_text_fr)
+    entry['TITLE_URL_FR'] = clean_text(title_url_fr)
     return entry
 
 # Function to normalize Minister names
@@ -66,11 +70,15 @@ def main():
     news_en = data_en['data']
     news_fr = data_fr['data']
     
-    # Normalize Minister names in both datasets
+    # Normalize Minister names in both datasets and clean text fields
     for entry in news_en:
-        entry['MINISTER_EN'] = normalize_minister_name(entry.get('MINISTER', ''))
+        entry['MINISTER_EN'] = normalize_minister_name(clean_text(entry.get('MINISTER', '')))
+        for key in entry:
+            entry[key] = clean_text(entry[key])
     for entry in news_fr:
-        entry['MINISTER_FR'] = normalize_minister_name(entry.get('MINISTER', ''))
+        entry['MINISTER_FR'] = normalize_minister_name(clean_text(entry.get('MINISTER', '')))
+        for key in entry:
+            entry[key] = clean_text(entry[key])
     
     # Combine the data into a single DataFrame based on timestamp and minister name
     combined_data = []
@@ -83,8 +91,7 @@ def main():
                 break
         if match_fr:
             combined_entry = {
-                "PUBDATE_EN": en.get("PUBDATE", ""),
-                "PUBDATE_FR": match_fr.get("PUBDATE", ""),
+                "PUBDATE": en.get("PUBDATE", ""),
                 "TITLE_EN": en.get("TITLE", ""),
                 "TEASER_EN": en.get("TEASER", ""),
                 "ADDITIONAL_TOPICS_EN": en.get("ADDITIONAL_TOPICS", ""),
@@ -111,9 +118,9 @@ def main():
     # Create a DataFrame
     df_combined = pd.DataFrame(combined_data)
     
-    # Reorder the columns to include the separated TITLE_TEXT and TITLE_URL fields
+    # Reorder the columns to include the separated TITLE_TEXT and TITLE_URL fields and remove PUBDATE_FR
     ordered_columns = [
-        "PUBDATE_EN", "PUBDATE_FR",
+        "PUBDATE",
         "TITLE_TEXT_EN", "TITLE_URL_EN", "TITLE_TEXT_FR", "TITLE_URL_FR",
         "TEASER_EN", "TEASER_FR",
         "ADDITIONAL_TOPICS_EN", "ADDITIONAL_TOPICS_FR",
@@ -128,6 +135,10 @@ def main():
     
     df_combined_ordered = df_combined[ordered_columns]
     
+    # Sort by PUBDATE descending
+    df_combined_ordered['PUBDATE'] = pd.to_datetime(df_combined_ordered['PUBDATE'])
+    df_combined_ordered.sort_values(by='PUBDATE', ascending=False, inplace=True)
+    
     return df_combined_ordered
 
 if __name__ == "__main__":
@@ -137,11 +148,15 @@ if __name__ == "__main__":
         existing_csv_path = 'combined_news.csv'
         try:
             existing_data = pd.read_csv(existing_csv_path)
+            existing_data['PUBDATE'] = pd.to_datetime(existing_data['PUBDATE'])
             # Append the new data
-            combined_data = pd.concat([existing_data, new_data]).drop_duplicates(subset=['PUBDATE_EN', 'TITLE_TEXT_EN', 'TITLE_TEXT_FR'], keep='last')
+            combined_data = pd.concat([existing_data, new_data]).drop_duplicates(subset=['PUBDATE', 'TITLE_TEXT_EN', 'TITLE_TEXT_FR'], keep='last')
         except FileNotFoundError:
             # If the file does not exist, use new data as the combined data
             combined_data = new_data
+        
+        # Sort by PUBDATE descending
+        combined_data.sort_values(by='PUBDATE', ascending=False, inplace=True)
         
         # Save the updated CSV file
         combined_data.to_csv(existing_csv_path, index=False)
