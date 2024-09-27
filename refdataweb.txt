@@ -44,7 +44,7 @@
 		<meta name="dcterms.issued" title="W3CDTF" content="2023-09-11"/>
 	
 	
-		<meta name="dcterms.modified" title="W3CDTF" content="2024-05-08"/>
+		<meta name="dcterms.modified" title="W3CDTF" content="2024-09-27"/>
 	
 	
 	
@@ -93,7 +93,7 @@
 
 
 
-                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="gsoqjbixzldjozxwnlfa-f-e7f489276-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"37","ak.cp":"368225","ak.ai":parseInt("231651",10),"ak.ol":"0","ak.cr":18,"ak.ipv":4,"ak.proto":"h2","ak.rid":"40a60e3d","ak.r":45796,"ak.a2":e,"ak.m":"dscb","ak.n":"essl","ak.bpcip":"52.157.4.0","ak.cport":43136,"ak.gh":"23.213.244.99","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1727425226","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==PKYKBkAq7iwEOtuw4UldPWSkgS9KadhtfnrOWXj2NxDrUcPjdnQeK+sSGgQdEQZarfS3OoBF5eTOAV7yw1V7BgDjW4gAqAMuknak89mozM55R9hL5JFAQlbfeI+fLzN7V0cScdKQES3KckSNXBDDHFc5QzgMkV8n5k6UUIUaw2HUebugUNuH37JgbZHBeNMBV8R3EL53ckWcRLtTSQAkdAFBKpp9SuqwN9WKfl0Z86HvDUVAZ9LcEmhurGLw5hFQxFppm1ZUZtv6qAVjbJWb3Ya3+dZw8bAs7CQBiFnc6UUqYOGL7ZCfDggkFtPAx0oCCxFSRCrtguJXiL3+qFQilWF6P8Q4KgdwPkAycxaZSsLAIKinrwKkKy4vepmwC3adezbV0Jt9SS5T7pdR5Kuu8nsrbcFUYhTFwr96UOHVEsc=","ak.pv":"783","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
+                              <script>!function(a){var e="https://s.go-mpulse.net/boomerang/",t="addEventListener";if("False"=="True")a.BOOMR_config=a.BOOMR_config||{},a.BOOMR_config.PageParams=a.BOOMR_config.PageParams||{},a.BOOMR_config.PageParams.pci=!0,e="https://s2.go-mpulse.net/boomerang/";if(window.BOOMR_API_key="KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",function(){function n(e){a.BOOMR_onload=e&&e.timeStamp||(new Date).getTime()}if(!a.BOOMR||!a.BOOMR.version&&!a.BOOMR.snippetExecuted){a.BOOMR=a.BOOMR||{},a.BOOMR.snippetExecuted=!0;var i,_,o,r=document.createElement("iframe");if(a[t])a[t]("load",n,!1);else if(a.attachEvent)a.attachEvent("onload",n);r.src="javascript:void(0)",r.title="",r.role="presentation",(r.frameElement||r).style.cssText="width:0;height:0;border:0;display:none;",o=document.getElementsByTagName("script")[0],o.parentNode.insertBefore(r,o);try{_=r.contentWindow.document}catch(O){i=document.domain,r.src="javascript:var d=document.open();d.domain='"+i+"';void(0);",_=r.contentWindow.document}_.open()._l=function(){var a=this.createElement("script");if(i)this.domain=i;a.id="boomr-if-as",a.src=e+"KBFUZ-C9D7G-RB8SX-GRGEN-HGMC9",BOOMR_lstart=(new Date).getTime(),this.body.appendChild(a)},_.write("<bo"+'dy onload="document._l();">'),_.close()}}(),"".length>0)if(a&&"performance"in a&&a.performance&&"function"==typeof a.performance.setResourceTimingBufferSize)a.performance.setResourceTimingBufferSize();!function(){if(BOOMR=a.BOOMR||{},BOOMR.plugins=BOOMR.plugins||{},!BOOMR.plugins.AK){var e=""=="true"?1:0,t="",n="cq4q4fix2vgiizxw3l3q-f-a479631fb-clientnsv4-s.akamaihd.net",i="false"=="true"?2:1,_={"ak.v":"37","ak.cp":"368225","ak.ai":parseInt("231651",10),"ak.ol":"0","ak.cr":25,"ak.ipv":4,"ak.proto":"h2","ak.rid":"120e540b","ak.r":47497,"ak.a2":e,"ak.m":"dscb","ak.n":"essl","ak.bpcip":"20.57.14.0","ak.cport":22912,"ak.gh":"23.48.100.14","ak.quicv":"","ak.tlsv":"tls1.3","ak.0rtt":"","ak.csrc":"-","ak.acc":"","ak.t":"1727453943","ak.ak":"hOBiQwZUYzCg5VSAfCLimQ==OyOxxueqM/woeDqLziDHx4kkfgCCG5Rtmm8AazXW3gwklVaixM14EKlHofBy45yWBuCUGlWNAzIecThOxCm5QKUvdzXbf8MgPBWw9yoTVlno6IhEXQ+qHHtR74Sf8qIefw4zsPamiHrSvhrAJ3//UuSaBScOY2irHfa2NnGcauuUuqn7l2R77XpIJBSy1PHupqspoqqUlg50S1CNtuoQJWF8A/r+ZmocQTjlVTCMAcTsQ1SxLzT4zfo1wwWheYY1MJkGK++gvFnvEU+X4wKG5R0t7ceaDxS7q4NaoOeB/ZD9hnd3uKEOf+4xLoUVv+uSao0BmmbW8xB/YDH5hP4v96z+ERXA5OsBN3CVSRmSxvR/YsG2r1crRQDUX/9Er37Z1F+lJCdyh9HXmBUH0Gp/XnwUQTC+xVKWoW3GElU7z/4=","ak.pv":"783","ak.dpoabenc":"","ak.tf":i};if(""!==t)_["ak.ruds"]=t;var o={i:!1,av:function(e){var t="http.initiator";if(e&&(!e[t]||"spa_hard"===e[t]))_["ak.feo"]=void 0!==a.aFeoApplied?1:0,BOOMR.addVar(_)},rv:function(){var a=["ak.bpcip","ak.cport","ak.cr","ak.csrc","ak.gh","ak.ipv","ak.m","ak.n","ak.ol","ak.proto","ak.quicv","ak.tlsv","ak.0rtt","ak.r","ak.acc","ak.t","ak.tf"];BOOMR.removeVar(a)}};BOOMR.plugins.AK={akVars:_,akDNSPreFetchDomain:n,init:function(){if(!o.i){var a=BOOMR.subscribe;a("before_beacon",o.av,null,null),a("onbeacon",o.rv,null,null),o.i=!0}return this},is_complete:function(){return!0}}}}()}(window);</script></head>
 
 <body vocab="http://schema.org/" typeof="WebPage" resource="#wb-webpage">
 
@@ -272,8 +272,8 @@ GC Enterprise Data Reference Standards</h1>
 
     <p>The Government of Canada data reference standards are a key priority within the <a href="/en/treasury-board-secretariat/corporate/reports/2023-2026-data-strategy.html">2023–2026 Data Strategy for the Federal Public Service</a>. The reference standards below are mandatory for departments and agencies subject to the <a href="https://www.tbs-sct.canada.ca/pol/doc-eng.aspx?id=32603"><em>Policy on Service and Digital</em></a>. Reference these data standards when designing a new system or dataset to create reliable, high-quality data.</p>
 
-<div class="table-responsive2 small">
-    <table class="wb-tables table table-bordered table-condensed table-striped small">
+<div class="table-responsive2">
+    <table class="wb-tables table table-bordered table-condensed table-striped small" data-wb-tables="{ &quot;ordering&quot; : false }">
         <caption class="text-left">
             Inventory table of GC enterprise data reference standards
         </caption>
@@ -300,7 +300,7 @@ GC Enterprise Data Reference Standards</h1>
 
                 <td>This reference standard is intended to standardize the way countries, territories and geographic areas are described in datasets.</td>
 
-                <td>2024-01-29</td>
+                <td class="nowrap">2024-01-29</td>
 
                 <td>
                     <ul>
@@ -320,7 +320,7 @@ GC Enterprise Data Reference Standards</h1>
 
                 <td>This reference standard is intended to standardize the way Canadian provinces and territories are described in datasets.</td>
 
-                <td>2023-10-02</td>
+                <td class="nowrap">2023-10-02</td>
 
                 <td>
                     <ul>
@@ -342,7 +342,7 @@ GC Enterprise Data Reference Standards</h1>
 
                 <td>This reference standard is intended to standardize the way industry classifications are described in datasets.</td>
 
-                <td>2023-12-15</td>
+                <td class="nowrap">2023-12-15</td>
 
                 <td>
                     <ul>
@@ -356,13 +356,49 @@ GC Enterprise Data Reference Standards</h1>
             </tr>
 			<tr>
 			  <td><a href="/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-business-number.html">Data reference standard on the business number</a></td>
-			  <td>This data reference standard is intended to ensure that departments and agencies use the business number (BN) as the standard identifier for all transactions between businesses and the Government of Canada (GC).</td>
-			  <td>2024-05-07</td>
+			  <td>This data reference standard is intended to ensure that departments and agencies use the business number as the standard identifier for all transactions between businesses and the Government of Canada.</td>
+			  <td class="nowrap">2024-05-07</td>
 			  <td><ul>
-			    <li>CRA</li>
-			    <li>Innovation, Science and Economic Development Canada (ISED)</li>
+			    <li>Canada Revenue Agency</li>
+			    <li>Innovation, Science and Economic Development Canada</li>
 		      </ul></td>
-			  <td>&nbsp;</td>
+			  <td><span class="wb-inv">not available</span></td>
+		  </tr>
+			<tr>
+			  <td><a href="/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-person-gender.html">Data reference standard on person(s): gender</a></td>
+			  <td>This  data reference standard provides a standard list of values to categorize data  on person(s). The list reflects the classifications of gender.</td>
+			  <td class="nowrap">2024-09-27</td>
+			  <td><ul>
+			    <li>Statistics Canada</li>
+		      </ul></td>
+			  <td><a href="https://open.canada.ca/data/en/dataset/21ffae40-8e4b-4082-a4f6-3c67f400e126">CSV</a></td>
+		  </tr>
+						<tr>
+			  <td><a href="/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-person-sex-assigned-birth.html">Data reference standard on person(s): sex assigned at birth</a></td>
+			  <td>This data reference standard is part of a suite  that provides a standard list of values to categorize data on person(s). The  list reflects the classifications of sex assigned at birth.</td>
+			  <td class="nowrap">2024-09-27</td>
+			  <td><ul>
+			    <li>Statistics Canada</li>
+		      </ul></td>
+			  <td><a href="https://open.canada.ca/data/en/dataset/9c36431e-d916-498d-9779-0c52ce840293">CSV</a></td>
+		  </tr>
+			<tr>
+			  <td><a href="/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-person-name-architecture.html">Data reference standard on person(s): name architecture</a></td>
+			  <td>This data reference standard is intended to ensure  that departments and agencies of the Government of Canada use consistent fields  for capturing the diverse set of names of persons.</td>
+			  <td class="nowrap">2024-09-27</td>
+			  <td><ul>
+			    <li>Immigration, Refugees and Citizenship Canada</li>
+		      </ul></td>
+			  <td><span class="wb-inv">not available</span></td>
+		  </tr>
+				<tr>
+			  <td><a href="/en/government/system/digital-government/digital-government-innovations/enabling-interoperability/gc-enterprise-data-reference-standards/data-reference-standard-date-time-format.html">Data reference standard on date and time format</a></td>
+			  <td>This data reference standard is intended to ensure  that departments and agencies use a consistent numeric format for date and  time.</td>
+			  <td class="nowrap">2024-09-27</td>
+			  <td><ul>
+			    <li>National Research Council Canada</li>
+		      </ul></td>
+			  <td><span class="wb-inv">not available</span></td>
 		  </tr>
         </tbody>
     </table>
@@ -382,7 +418,7 @@ GC Enterprise Data Reference Standards</h1>
 	</div>
         <dl id="wb-dtmd">
     <dt>Date modified:</dt>
-    <dd><time property="dateModified">2024-05-08</time></dd>
+    <dd><time property="dateModified">2024-09-27</time></dd>
 </dl>
 </section>
 
